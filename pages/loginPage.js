@@ -2,7 +2,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { signIn, signOut, useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import Footer from "./components/Footer";
 
 function loginCheck() {
   const [session, loading] = useSession();
@@ -10,7 +9,7 @@ function loginCheck() {
 
   useEffect(() => {
     if (session || loading) {
-      router.push("/TravelBook");
+      router.push("/");
     }
   }, [session, loading]);
 }
@@ -25,10 +24,10 @@ function LoginPage() {
         <Row>
           <Col
             className="logincover"
-            style={{ backgroundImage: 'url("loginpage.jpg")' }}
+            style={{ backgroundImage: 'url("melanzane-background.jpg")' }}
           />
           <div className="loginformcontainer">
-            <img className="logo" src="trip2day_logo.png" width="60%" />
+            {/* <img className="logo" src="viola-melanzana.png" width="60%" /> */}
 
             <div className="case">
               {!session && (
@@ -40,7 +39,7 @@ function LoginPage() {
                     className="default-button"
                     onClick={() =>
                       signIn("facebook", {
-                        callbackUrl: "http://localhost:3000/TravelBook",
+                        callbackUrl: "http://localhost:3000",
                       })
                     }
                   >
@@ -83,7 +82,6 @@ function LoginPage() {
           </div>
         </Row>
       </Container>
-      <Footer />
     </>
   );
 }
