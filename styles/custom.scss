@@ -1,0 +1,20 @@
+/*............................. NAVBAR STYLE  .........................*/
+.button-navbar {
+    margin: 4px 14px;
+    font-size: 12px;
+  }
+  
+  .navbar {
+    &-text {
+      display: inline-block;
+      margin-bottom: 0px;
+    }
+    font-family: Comfortaa-Light;
+    p {
+      margin-bottom: 0px;
+    }
+  }
+  
+  .navbar.navbar-expand.navbar-light.bg-primary.sticky-top {
+    padding: 0 5px;
+  }
