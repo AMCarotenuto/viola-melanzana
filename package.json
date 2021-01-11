@@ -1,0 +1,31 @@
+{
+  "name": "viola-melanzana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "next": "^10.0.3",
+    "next-auth": "^3.1.0",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "sass": "^1.30.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finalprojectgruppo1/viola-melanzana.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finalprojectgruppo1/viola-melanzana/issues"
+  },
+  "homepage": "https://github.com/finalprojectgruppo1/viola-melanzana#readme"
+}
