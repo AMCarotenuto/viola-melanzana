@@ -2,6 +2,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import { signIn, signOut, useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Footer from "./components/Footer";
+
 
 function loginCheck() {
   const [session, loading] = useSession();
@@ -39,7 +41,7 @@ function LoginPage() {
                     className="default-button"
                     onClick={() =>
                       signIn("facebook", {
-                        callbackUrl: "http://localhost:3000",
+                        callbackUrl: "http://localhost:3000/Recipes",
                       })
                     }
                   >
@@ -82,6 +84,7 @@ function LoginPage() {
           </div>
         </Row>
       </Container>
+      <Footer/>
     </>
   );
 }

@@ -1,6 +1,4 @@
-import React from 'react'
-
-export default function Footer() {
+function Footer() {
   return (
     <div className="main-footer">
       <img
@@ -9,6 +7,7 @@ export default function Footer() {
             className="d-inline-block align-top"
             alt="Viola-Melanzana Logo"
           />
+
       <div className="col1">
         <p>Powered By Team Chikorita ©</p>
         <p>We are hiring! </p>
@@ -16,3 +15,4 @@ export default function Footer() {
     </div>
   );
 }
+export default Footer;
