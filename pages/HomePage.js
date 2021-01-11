@@ -3,6 +3,8 @@ import TopNavbar from "./components/TopNavbar";
 import InputIngredients from "./components/InputIngredients";
 import FilterRecipes from "./components/FilterRecipes";
 import Footer from "./components/Footer";
+import Cards from './components/Cards';
+import {Row, Col, Image} from 'react-bootstrap'
 
 function loginCheck() {
   const [session, loading] = useSession();
@@ -16,17 +18,21 @@ function loginCheck() {
 }
 
 export default function HomePage() {
-  return (
-    <div>
-      <div>{loginCheck()}</div>
-      <TopNavbar />
-      <div className="main-homePage">
-        <br />
-        <InputIngredients />
-        <h1>QUI VANNO LE CARDS, IL FILTER E LE RICETTE </h1>
-        <FilterRecipes />
-        <Footer />
+
+    return (
+      <div>
+              <div>{loginCheck()}</div>
+        <TopNavbar />
+        <div className="main-homePage">
+          <br />
+          <InputIngredients />
+          <br />
+          <h1>QUI VANNO LE FOTO DEGLI INGREDIENTI </h1>
+          <FilterRecipes />
+          <br />
+          <Cards />
+          <Footer />
+        </div>
       </div>
-    </div>
-  );
+    );
 }
