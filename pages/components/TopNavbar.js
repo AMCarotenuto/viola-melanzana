@@ -10,18 +10,25 @@ export default function TopNavbar() {
 
   return (
     <>
-      <Navbar bg="primary" sticky="top">
-        <Navbar.Brand href="/TravelBook">
+      <Navbar className="custom-navbar">
+        <Navbar.Brand href="/HomePage">
           <img
-            src="/trip2day_logo.png"
-            height="30"
+            src="/logo.png"
+            height="80"
             className="d-inline-block align-top"
-            alt="Trip2Day Logo"
+            alt="Viola-Melanzana Logo"
           />
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/TravelBook">My Travel Book</Nav.Link>
-          <Nav.Link href="/Photos">My Photos</Nav.Link>
+          <Nav.Link href="/HomePage" >
+            Home
+          </Nav.Link>
+          <Nav.Link href="/Recipes" >
+            Recipes
+          </Nav.Link>
+          <Nav.Link href="/Calendar" >
+            Calendar
+          </Nav.Link>
         </Nav>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
@@ -36,7 +43,7 @@ export default function TopNavbar() {
                   className="button-navbar"
                   onClick={() =>
                     signIn("facebook", {
-                      callbackUrl: "http://localhost:3000/TravelBook",
+                      callbackUrl: "http://localhost:3000/HomePage",
                     })
                   }
                 >
