@@ -8,10 +8,14 @@ export default function HomePage() {
     return (
         <div>
             <TopNavbar />
+            <div className="main-homePage">
+            <br/>
             <InputIngredients />
             <h1>QUI VANNO LE CARDS, IL FILTER E LE RICETTE </h1>
             <FilterRecipes />
             <Footer />
         </div>
+        </div>
+        
     )
 }

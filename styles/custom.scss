@@ -95,7 +95,7 @@ input[type="submit"] {
   margin-left: auto;
 }
  #filter-bar{
-  width: 162px;
+  width: 200px;
   margin-right: auto;
   margin-left: auto;
  }
@@ -202,7 +202,15 @@ input.datapicker-input[type="text"] {
   font-family: Comfortaa-Light;
 }
 #dropdown-split-basic{
-  background-color: rgb(14, 13, 13);
+  background-color: rgb(255, 255, 255);
+}
+
+.dropdown-toggle:empty::after{
+  color: purple;
+}
+
+.main-homePage{
+  background-color: #e5e5e5;
 }
 
 .create-new-trip-text {
