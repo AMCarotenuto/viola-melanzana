@@ -39,7 +39,7 @@ function LoginPage() {
                     className="default-button"
                     onClick={() =>
                       signIn("facebook", {
-                        callbackUrl: "http://localhost:3000",
+                        callbackUrl: "http://localhost:3000/Recipes",
                       })
                     }
                   >
