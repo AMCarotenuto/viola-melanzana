@@ -27,13 +27,21 @@ button.btn.btn-primary[type="button"] {
   text-align: center;
   border: none;
 }
-
-.button-travel,
 .button-to-trip,
 .default-button,
 .button-navbar,
 input[type="submit"] {
   border-radius: 4px;
+}
+
+.button-ingredients{
+  background-color: white;
+  color: purple;
+  padding: 0.55em 1em;
+  text-decoration: none;
+  font-family: Comfortaa-Light;
+  text-align: center;
+  border: none;
 }
 
 //CARD
@@ -80,14 +88,26 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+#searchBar-ingredients{
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
 input[type="text"] {
+  vertical-align: middle;
   width: 300px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 5px;
-  background-image: url("/Binocolo.png");
-  background-size: 22px;
-  background-position: 4px 2px;
-  background-repeat: no-repeat;
-  padding-left: 35px;
+  background-color: purple;
+  color: white;
+  padding-left: 40px;
+}
+
+::placeholder {
+  color:white;
 }
 
 //TEXT
