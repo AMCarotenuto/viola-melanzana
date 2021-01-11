@@ -10,7 +10,7 @@ function loginCheck() {
   const router = useRouter();
 
   useEffect(() => {
-    if (session || loading) {
+    if (!(session || loading)) {
       router.push("/");
     }
   }, [session, loading]);
