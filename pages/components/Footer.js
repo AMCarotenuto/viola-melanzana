@@ -1,5 +1,4 @@
 import Logo from "../../public/vercel.svg";
-import "../styles/footer.css";
 
 export default function Footer() {
   return (
