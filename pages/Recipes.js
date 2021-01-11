@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/client";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import React from "react";
 import TopNavbar from "./components/TopNavbar";
@@ -9,7 +10,7 @@ function loginCheck() {
   const router = useRouter();
 
   useEffect(() => {
-    if (session || loading) {
+    if (!(session || loading)) {
       router.push("/");
     }
   }, [session, loading]);

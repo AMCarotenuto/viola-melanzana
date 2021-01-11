@@ -31,17 +31,18 @@ button.btn.btn-primary[type="button"] {
 .default-button,
 .button-navbar,
 input[type="submit"] {
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .button-ingredients{
   background-color: white;
   color: purple;
-  padding: 0.55em 1em;
-  text-decoration: none;
+  height: 35px;
+  width: 100px;
   font-family: Comfortaa-Light;
   text-align: center;
-  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
 }
 
 //CARD
@@ -89,17 +90,21 @@ input[type="submit"] {
 }
 
 #searchBar-ingredients{
-  width: 400px;
+  width: 420px;
   margin-right: auto;
   margin-left: auto;
 }
+ #filter-bar{
 
+  width: 200px;
+
+  margin-right: auto;
+  margin-left: auto;
+ }
 
 input[type="text"] {
-  vertical-align: middle;
   width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 35px;
   border-radius: 5px;
   background-color: purple;
   color: white;
@@ -197,6 +202,19 @@ input.datapicker-input[type="text"] {
   padding: 0.55em 1em;
   font-size: 12px;
   font-family: Comfortaa-Light;
+}
+#dropdown-split-basic{
+
+  background-color: rgb(255, 255, 255);
+}
+
+.dropdown-toggle:empty::after{
+  color: purple;
+}
+
+.main-homePage{
+  background-color: #e5e5e5;
+
 }
 
 .create-new-trip-text {
