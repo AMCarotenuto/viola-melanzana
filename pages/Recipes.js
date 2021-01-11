@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import React from "react";
 import TopNavbar from "./components/TopNavbar";
 
-
 function loginCheck() {
   const [session, loading] = useSession();
   const router = useRouter();
