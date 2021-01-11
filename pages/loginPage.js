@@ -11,7 +11,7 @@ function loginCheck() {
 
   useEffect(() => {
     if (session || loading) {
-      router.push("/");
+      router.push("/Recipes");
     }
   }, [session, loading]);
 }
