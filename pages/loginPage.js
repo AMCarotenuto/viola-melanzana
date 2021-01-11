@@ -11,7 +11,7 @@ function loginCheck() {
 
   useEffect(() => {
     if (session || loading) {
-      router.push("/Recipes");
+      router.push("/HomePage");
     }
   }, [session, loading]);
 }
@@ -41,7 +41,7 @@ function LoginPage() {
                     className="default-button"
                     onClick={() =>
                       signIn("facebook", {
-                        callbackUrl: "http://localhost:3000/Recipes",
+                        callbackUrl: "http://localhost:3000/HomePage",
                       })
                     }
                   >
