@@ -1,12 +1,14 @@
-import Logo from "../../public/vercel.svg";
-import "../styles/footer.css";
+import React from 'react'
 
 export default function Footer() {
   return (
     <div className="main-footer">
-      <div className="logo-container">
-        <img src={Logo} alt="logo" className="logo" />
-      </div>
+      <img
+            src="/logo.png"
+            height="80"
+            className="d-inline-block align-top"
+            alt="Viola-Melanzana Logo"
+          />
       <div className="col1">
         <p>Powered By Team Chikorita ©</p>
         <p>We are hiring! </p>
