@@ -14,15 +14,15 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
+    "/Calendar": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/pages/Calendar.js"
     ],
-    "/Recipes": [
+    "/HomePage": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/Recipes.js"
+      "static/chunks/pages/HomePage.js"
     ],
     "/_app": [
       "static/chunks/main.js",

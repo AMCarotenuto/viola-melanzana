@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TopNavbar from "./components/TopNavbar";
 import InputIngredients from "./components/InputIngredients";
 import FilterRecipes from "./components/FilterRecipes";
@@ -23,13 +23,17 @@ export default function HomePage() {
 
     return (
       <div>
-              <div>{loginCheck()}</div>
+        <div>{loginCheck()}</div>
         <TopNavbar />
         <div className="main-homePage">
           <br />
           <InputIngredients />
           <br />
-          <h1>QUI VANNO LE FOTO DEGLI INGREDIENTI </h1>
+          <Col xs={6} md={4}>
+            <button className="button-image">
+              <Image src="pomodoro.jpg" thumbnail />
+            </button>
+          </Col>
           <FilterRecipes />
           <br />
           <Cards />
