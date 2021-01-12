@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ "react/jsx-dev-runtime");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
-var _jsxFileName = "C:\\Users\\palla\\Desktop\\viola-melanzana\\pages\\components\\Footer.js";
+var _jsxFileName = "C:\\Users\\PC\\Desktop\\final-project\\viola-melanzana\\pages\\components\\Footer.js";
 
 function Footer() {
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("div", {
@@ -167,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loginPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./loginPage */ "./pages/loginPage.js");
 
 
-var _jsxFileName = "C:\\Users\\palla\\Desktop\\viola-melanzana\\pages\\index.js";
+var _jsxFileName = "C:\\Users\\PC\\Desktop\\final-project\\viola-melanzana\\pages\\index.js";
 
 
 function Home() {
@@ -223,7 +223,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Footer */ "./pages/components/Footer.js");
 
 
-var _jsxFileName = "C:\\Users\\palla\\Desktop\\viola-melanzana\\pages\\loginPage.js";
+var _jsxFileName = "C:\\Users\\PC\\Desktop\\final-project\\viola-melanzana\\pages\\loginPage.js";
 
 
 
