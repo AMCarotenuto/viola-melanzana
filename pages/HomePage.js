@@ -3,12 +3,11 @@ import TopNavbar from "./components/TopNavbar";
 import InputIngredients from "./components/InputIngredients";
 import FilterRecipes from "./components/FilterRecipes";
 import Footer from "./components/Footer";
-import Cards from './components/Cards';
-import {Row, Col, Image} from 'react-bootstrap'
+import Cards from "./components/Cards";
+import { Row, Col, Image } from "react-bootstrap";
 import { useSession } from "next-auth/client";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import CookieConsent from "react-cookie-consent";
 
 function loginCheck() {
@@ -54,5 +53,5 @@ export default function HomePage() {
           <Footer />
         </div>
       </div>
-    );
+  );
 }
