@@ -19,6 +19,7 @@ function loginCheck() {
 export default function Calendar() {
     return (
         <div>
+       <div>{loginCheck()}</div>
             <TopNavbar />
             <h1>QUI VA IL CALENDARIO</h1>
             <Footer />
