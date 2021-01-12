@@ -5,6 +5,8 @@ import FilterRecipes from "./components/FilterRecipes";
 import Footer from "./components/Footer";
 import Cards from './components/Cards';
 import {Row, Col, Image} from 'react-bootstrap'
+import { useSession } from "next-auth/client";
+import { useRouter } from "next/router";
 
 function loginCheck() {
   const [session, loading] = useSession();
