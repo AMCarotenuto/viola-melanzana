@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import Cards from "./components/Cards";
 import { Row, Col, Image } from "react-bootstrap";
 import { useSession } from "next-auth/client";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import CookieConsent from "react-cookie-consent";
 
