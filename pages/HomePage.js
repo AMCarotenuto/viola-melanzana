@@ -8,7 +8,6 @@ import {Row, Col, Image} from 'react-bootstrap'
 import { useSession } from "next-auth/client";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import CookieConsent from "react-cookie-consent";
 
 function loginCheck() {
