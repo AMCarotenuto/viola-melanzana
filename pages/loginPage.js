@@ -41,7 +41,7 @@ function LoginPage() {
                     className="default-button"
                     onClick={() =>
                       signIn("facebook", {
-                        callbackUrl: "http://localhost:3000/HomePage",
+                        callbackUrl: "/HomePage",
                       })
                     }
                   >
@@ -73,7 +73,7 @@ function LoginPage() {
                   <button
                     className="default-button"
                     onClick={() =>
-                      signOut({ callbackUrl: "http://localhost:3000" })
+                      signOut({ callbackUrl: "/" })
                     }
                   >
                     Sign out

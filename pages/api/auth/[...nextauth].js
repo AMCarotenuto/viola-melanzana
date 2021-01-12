@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 
 const options = {
-  site: process.env.SITE || "http://localhost:3000",
+  site: process.env.SITE || "https://viola-melanzana.herokuapp.com/",
   // Configure one or more authentication providers
   providers: [
     Providers.Facebook({
@@ -22,7 +22,7 @@ const options = {
         //   return Promise.resolve(false)
         // You can also Reject this callback with an Error or with a URL:
         // return Promise.reject(new Error('error message')) // Redirect to error page
-        return Promise.reject("http://localhost:3000"); // Redirect to a URL
+        return Promise.reject("https://viola-melanzana.herokuapp.com/"); // Redirect to a URL
       }
     },
     redirect: async (url, baseUrl) => {
@@ -46,7 +46,7 @@ const options = {
   },
 
   // A database is optional, but required to persist accounts in a database
-  database: process.env.DATABASE_URL,
+  // database: process.env.DATABASE_URL,
 };
 
 export default (req, res) => NextAuth(req, res, options);
