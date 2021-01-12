@@ -45,6 +45,10 @@ input[type="submit"] {
   margin-left: 20px;
 }
 
+.button-image{
+  background-color: #e5e5e5;
+}
+
 //CARD
 .card {
   width: 18rem;
@@ -213,7 +217,8 @@ input.datapicker-input[type="text"] {
 }
 #dropdown-split-basic{
 
-  background-color: rgb(255, 255, 255);
+  background-color: white;
+  color:purple;
 }
 
 .dropdown-toggle:empty::after{
@@ -222,7 +227,7 @@ input.datapicker-input[type="text"] {
 
 .main-homePage{
   background-color: #e5e5e5;
-
+  width: 100%;
 }
 
 .create-new-trip-text {
@@ -242,22 +247,7 @@ input.datapicker-input[type="text"] {
   color: white;
 }
 
-#dropdown-menu-align-right {
-  //id-->DropdownButton
-  color: white;
-  background-color: #75d8a2;
-  border: none;
-  font-family: Comfortaa-Medium;
-  padding: 0.20em 1em;
-  box-shadow: none;
-}
 
-.dropdown-menu.show.dropdown-menu-right {
-  //className-->Dropdown menu
-  background-color: #75d8a2;
-  font-family: Comfortaa-Medium;
-  border-color: #75d8a2;
-}
 
 .header-new-trip,
 .calendar-date-container {

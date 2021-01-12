@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import React from "react";
 import TopNavbar from "./components/TopNavbar";
+import Footer from "./components/Footer";
 
 function loginCheck() {
   const [session, loading] = useSession();
@@ -21,6 +22,7 @@ export default function Recipes() {
       <div>{loginCheck()}</div>
       <TopNavbar />
       <h1>QUI VANNO IL FILTER E LE RICETTE</h1>
+      <Footer />
     </div>
   );
 }
