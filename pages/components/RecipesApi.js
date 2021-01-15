@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 import Recipe from "./apiComponents/Recipe";
 import { v4 as uuidv4 } from "uuid";
 
@@ -12,7 +12,7 @@ export default function RecipesApi() {
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   const getData = async () => {
-    const result = await Axios.get(url);
+    const result = await axios.get(url);
     setRecipes(result.data.hits);
     console.log(result);
     setQuery("");
@@ -25,8 +25,25 @@ export default function RecipesApi() {
 
   const onChange = (e) => {
     setQuery(e.target.value);
+    {
+      (event) => fetchIngredients(event);
+    }
   };
-
+  function fetchIngredients(data) {
+    axios
+      .get("http://localhost:3001/ingredients")
+      .then((res) => {
+        // console.log(JSON.stringify(res.data));
+        setIngredient(res.data.records.map((r) => r.fields));
+        ingredient.filter((f) =>
+          f.ingredient_name.toLowerCase().includes(data)
+        );
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  const [ingredient, setIngredient] = useState([]);
   return (
     <div className="api">
       <form className="search-form" onSubmit={onSubmit}>
