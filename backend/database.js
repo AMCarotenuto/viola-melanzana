@@ -1,11 +1,10 @@
+/////////////////////////////////// POSTGRES DATABASE
+
 // const { Client } = require("pg");
 
 // const client = new Client({
 //   connectionString:
-//     "postgres://qguoxkdbgqohhn:4ecdead2756f1366a424a6bec4dbdd7b04a131ba2f9924334d8810008261f9d9@ec2-34-248-148-63.eu-west-1.compute.amazonaws.com:5432/d84gpa0tilkgug?ssl=true",
-//   ssl: {
-//     rejectUnauthorized: false,
-//   },
+//     "postgres://ywqsvxyeeljsqt:872fbc7facf46e4bc3299d2237511dd93ed0303c721ce21cc8de7c394b8c00d3@ec2-54-78-127-245.eu-west-1.compute.amazonaws.com:5432/df5defsugm5c4l?sslmode=require",
 // });
 
 // client.connect();
@@ -23,22 +22,22 @@
 
 /////////////////////////////////AIRTABLE DATABASE
 
-const airtable = require("airtable");
+// const airtable = require("airtable");
 
-airtable.configure({
-  endpointUrl: "https://api.airtable.com",
-  apiKey: "keyR00qDFV6vvxMq2",
-});
+// airtable.configure({
+//   endpointUrl: "https://api.airtable.com",
+//   apiKey: "keyR00qDFV6vvxMq2",
+// });
 
-const base = airtable.base("tbl70ebrVcjqj5j4v");
+// const base = airtable.base("tbl70ebrVcjqj5j4v");
 
-base("Table 1").create(
-  { Name: "test", Notes: "test notes" },
-  function (err, record) {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log(record.getId());
-  }
-);
+// base("Table 1").create(
+//   { Name: "test", Notes: "test notes" },
+//   function (err, record) {
+//     if (err) {
+//       console.error(err);
+//       return;
+//     }
+//     console.log(record.getId());
+//   }
+// );
