@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import Recipe from "./apiComponents/Recipe";
+import { v4 as uuidv4 } from "uuid";
 
 export default function RecipesApi() {
   const [query, setQuery] = useState("");
@@ -26,11 +28,11 @@ export default function RecipesApi() {
   };
 
   return (
-    <div className="App">
+    <div className="api">
       <form className="search-form" onSubmit={onSubmit}>
         <input
           type="text"
-          placeholder="CHOOSE YOUR INGREDIENT"
+          placeholder="Choose your ingredient"
           autoComplete="off"
           onChange={onChange}
           value={query}
@@ -39,7 +41,7 @@ export default function RecipesApi() {
       </form>
       <div className="recipes">
         {recipes !== [] &&
-          recipes.map((recipe) => <h2>{recipe.recipe.label}</h2>)}
+          recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)}
       </div>
     </div>
   );
