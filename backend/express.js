@@ -22,7 +22,6 @@ app.get("/ingredients", async (req, res) => {
   )
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
       res.json(result);
     })
     .catch((err) => {
