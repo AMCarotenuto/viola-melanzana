@@ -8,6 +8,7 @@ import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import CookieConsent from "react-cookie-consent";
 import RecipesApi from "./components/RecipesApi";
+import LikeButton from "./components/LikeButton";
 
 function loginCheck() {
   const [session, loading] = useSession();
@@ -34,6 +35,7 @@ export default function HomePage() {
             <Image src="pomodoro.jpg" thumbnail />
           </button>
         </Col>
+        <LikeButton />
         <FilterRecipes />
         <RecipesApi />
         <CookieConsent

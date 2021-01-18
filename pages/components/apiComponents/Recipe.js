@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Ingredients from "./Ingredients";
+import LikeButton from "../../components/LikeButton"
 import {CardDeck, Card, Button } from "react-bootstrap";
 
 const Recipe = ({ recipe }) => {
@@ -18,15 +19,18 @@ const Recipe = ({ recipe }) => {
             <Card.Text>
               <a href={url}>Recipe from {source}</a>
             </Card.Text>
+            
             <Button variant="primary" onClick={() => setShow(!show)}>
               Ingredients
             </Button>
             {show && <Ingredients ingredients={ingredients} />}
+            <LikeButton />
           </Card.Body>
         </Card>
         </CardDeck>
     </div>
   );
+
 };
 
 export default Recipe;
