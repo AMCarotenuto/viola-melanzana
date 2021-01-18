@@ -29,6 +29,28 @@ app.get("/ingredients", async (req, res) => {
     });
 });
 
+app.post("/recipes", async (req, res) => {
+  fetch(
+    `https://api.airtable.com/v0/appd8eN5Q77OzFlvy/ingredients?view=Grid%20view`,
+    {
+      headers: {
+        Authorization: `Bearer keyR00qDFV6vvxMq2`,
+        "Content-Type": "application/json",
+      }, // API key
+      method: "post",
+      body: JSON.stringify(res),
+    }
+  )
+    .then((res) => res.json())
+    .then((result) => {
+      console.log(result);
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 app.all((req, res) => {
   res.json({ error: "C'è un disturbo nella forza" });
 });
