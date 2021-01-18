@@ -15,10 +15,9 @@ const Recipe = ({ recipe }) => {
           </Card.Header>
           <Card.Body>
             <Card.Img variant="top" src={image} alt={label} />
-            <br/>
+            <br />
             <Button variant="primary" onClick={() => setShow(!show)}>
-              {" "}
-              Ingredients{" "}
+              Ingredients
             </Button>
             {show && <Ingredients ingredients={ingredients} />}
           </Card.Body>

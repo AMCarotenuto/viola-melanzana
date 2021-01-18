@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Recipe from "./apiComponents/Recipe";
 import { v4 as uuidv4 } from "uuid";
@@ -8,22 +8,21 @@ export default function RecipesApi() {
   const [query1, setQuery1] = useState("");
   const [query2, setQuery2] = useState("");
   const [recipes, setRecipes] = useState([]);
-  const [healthLabels, setHealthLabels] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+  const [projects, setProjects] = useState([]);
 
   const APP_ID = "cd031e0c";
   const APP_KEY = "530d7bfa70fdc10559f377c561636888";
   const url = `https://api.edamam.com/search?q=${query1}+${query2}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
-  const getData = async (peppo) => {
+  const getData = async () => {
     const result = await Axios.get(url);
     setRecipes(result.data.hits);
-    console.log(result);
-    setHealthLabels(result.data.hits.map((h) => h.recipe));
-    //healthLabels.map((r) => r.healthLabels);
-    //healthLabels.includes(peppo);
-    console.log(healthLabels);
+    setProjects(result.data.hits);
     setQuery1("");
     setQuery2("");
+
+    console.log(result);
   };
 
   const onSubmit = (e) => {
@@ -37,6 +36,18 @@ export default function RecipesApi() {
   const onChange2 = (e) => {
     setQuery2(e.target.value);
   };
+
+  useEffect(() => {
+    setProjects(recipes);
+  }, []);
+
+  useEffect(() => {
+    setProjects([]);
+    const filtered = recipes.filter((r) =>
+      r.recipe.healthLabels.includes(filteredRecipes)
+    );
+    setProjects(filtered);
+  }, [filteredRecipes]);
 
   return (
     <div className="api">
@@ -67,102 +78,55 @@ export default function RecipesApi() {
             >
               <Dropdown.Item
                 onClick={() => {
-                  const hlMap = healthLabels.map((r) => r.healthLabels);
-                  const hlFilter = hlMap.filter(
-                    (r) => r.healthLabels === "Dairy-free"
-                  );
-                  console.log(hlFilter);
-                  console.log(hlMap);
+                  setFilteredRecipes("Alcohol-Free");
                 }}
               >
-                Dairy-free
+                Alcohol free
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item
                 onClick={() => {
-                  //const hlMap = healthLabels.map((r) => r.healthLabels);
-                  // const hlFilter = hlMap.filter(
-                  //   (r) => r.healthLabels === "Egg-free"
-                  // );
-                  // console.log(hlFilter);
-                  // console.log(hlMap);
-
-                  // var hlFilter = healthLabels.filter(function (r) {
-                  //   return r.healthLabels === "Egg-free";
-                  // });
-
-                  // const hlFilter = healthLabels.forEach((element) => {
-                  //   return element.healthLabels == "Vegan";
-                  // });
-
-                  //   const hlFilter = recipes.filter( function(healthLabels){
-                  //     healthLabels.filter( function(d){
-                  //       if (d.healthLabels === "Vegan"){
-                  //         result = d;
-                  //       }
-                  //     }
-                  //       )
-                  //   }); console.log (d);
-
-                  // const hlForEach = healthLabels.forEach((element) => {
-                  //   if (element === "Vegan") {
-                  //     console.log(element)
-                  //   }
-                  // }); 
+                  setFilteredRecipes("Peanut-Free");
                 }}
               >
-                Egg-free
+                Peanut free
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item
                 onClick={() => {
-                  const hlMap = healthLabels.map((r) => r.healthLabels);
-                  const hlFilter = hlMap.filter(
-                    (r) => r.healthLabels === "Palo"
-                  );
-                  console.log(hlFilter);
-                  console.log(hlMap);
+                  setFilteredRecipes("Sugar-Conscious");
                 }}
               >
-                Palo
+                Sugar conscious
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item
                 onClick={() => {
-                  const hlMap = healthLabels.map((r) => r.healthLabels);
-                  const hlFilter = hlMap.filter((r) => {
-                    return r.healthLabels === "Vegan";
-                  });
-                  console.log(hlFilter);
-                  console.log(hlMap);
+                  setFilteredRecipes("Tree-Nut-Free");
+                }}
+              >
+                Tree nut free
+              </Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item
+                onClick={() => {
+                  setFilteredRecipes("Vegan");
                 }}
               >
                 Vegan
               </Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Gluten-free</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Wheat-free</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Low-sugar</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Vegeterian</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Peanut-free</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Tree-nut-free</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Soy-free</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Fish-free</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Shellfish-free</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Fat-free</Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  setFilteredRecipes("Vegetarian");
+                }}
+              >
+                Vegetrian
+              </Dropdown.Item>
             </SplitButton>
           </Dropdown>
         </div>
-        {recipes.map((recipe) => (
+        {projects.map((recipe) => (
           <Recipe key={uuidv4()} recipe={recipe} />
         ))}
       </div>
