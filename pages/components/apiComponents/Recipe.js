@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Ingredients from "./Ingredients";
-import LikeButton from "../../components/LikeButton"
+import FbLike from "../FbLikeButton";
 import {CardDeck, Card, Button } from "react-bootstrap";
 
 const Recipe = ({ recipe }) => {
@@ -27,7 +27,7 @@ const Recipe = ({ recipe }) => {
               Ingredients{" "}
             </Button>
             {show && <Ingredients ingredients={ingredients} />}
-            <LikeButton />
+            <FbLike />
           </Card.Body>
           <Card.Footer className="text-muted">
             <a href={url}>Recipe from {source}</a>
