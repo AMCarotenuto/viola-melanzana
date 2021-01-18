@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import TopNavbar from "./components/TopNavbar";
 import InputIngredients from "./components/InputIngredients";
-import FilterRecipes from "./components/FilterRecipes";
 import Footer from "./components/Footer";
 import { Row, Col, Image } from "react-bootstrap";
 import { useSession } from "next-auth/client";
@@ -27,16 +26,15 @@ export default function HomePage() {
       <div>{loginCheck()}</div>
       <TopNavbar />
       <div className="main-homePage">
-        <br />
+        {/* <br />
         <InputIngredients />
         <br />
         <Col xs={6} md={4}>
           <button className="button-image">
             <Image src="pomodoro.jpg" thumbnail />
           </button>
-        </Col>
-        <LikeButton />
-        <FilterRecipes />
+
+        </Col> */}
         <RecipesApi />
         <CookieConsent
           location="bottom"

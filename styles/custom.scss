@@ -617,7 +617,7 @@ input[type="file"] {
 }
 
 .search-form {
-  width: 60rem;
+  width: auto;
   height: 10rem;
   display: flex;
   justify-content: center;
@@ -628,7 +628,6 @@ input[type="file"] {
 }
 
 .search-form input {
-  font-size: 1.6rem;
   border: none;
   border-bottom: 0.1rem solid #ccc;
   margin: 0 0.5rem;
@@ -637,8 +636,9 @@ input[type="file"] {
 }
 
 .search-form input[type="text"] {
-  padding: 0 5rem;
-  width: 50%;
+  font-size: 1.6rem;
+  padding: 0 2rem;
+  width: auto;
   height: 50px;
   border-radius: 5px;
   background-color: purple;
@@ -647,8 +647,10 @@ input[type="file"] {
 }
 
 .search-form input[type="submit"] {
-  width: 25%;
+  font-size: 1.4rem;
+  width: auto;
   height: 50px;
+  padding: 0 1rem;
   text-transform: uppercase;
   background-color:white;
   color: purple;
@@ -676,6 +678,7 @@ input[type="file"] {
 
 .card {
   margin: 3rem;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   position: relative;

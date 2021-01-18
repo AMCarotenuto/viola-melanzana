@@ -9,25 +9,31 @@ const Recipe = ({ recipe }) => {
 
   return (
     <div className="recipe">
-        <CardDeck>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={image} alt={label} />
+      <CardDeck>
+        <Card className="text-center">
+          <Card.Header>
+            <h2>{label}</h2>
+          </Card.Header>
           <Card.Body>
-            <Card.Title>
-              <h2>{label}</h2>
-            </Card.Title>
-            <Card.Text>
-              <a href={url}>Recipe from {source}</a>
-            </Card.Text>
+
+     
             
+
+            <Card.Img variant="top" src={image} alt={label} />
+            <br/>
+
             <Button variant="primary" onClick={() => setShow(!show)}>
-              Ingredients
+              {" "}
+              Ingredients{" "}
             </Button>
             {show && <Ingredients ingredients={ingredients} />}
             <LikeButton />
           </Card.Body>
+          <Card.Footer className="text-muted">
+            <a href={url}>Recipe from {source}</a>
+          </Card.Footer>
         </Card>
-        </CardDeck>
+      </CardDeck>
     </div>
   );
 
