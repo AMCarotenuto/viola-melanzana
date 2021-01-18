@@ -16,7 +16,7 @@ export default function RecipesApi() {
 
 
   const getData = async (peppo) => {
-    const result = await Axios.get(url);
+    const result = await axios.get(url);
     setRecipes(result.data.hits);
     console.log(result);
     setHealthLabels(result.data.hits.map((h) => h.recipe));
