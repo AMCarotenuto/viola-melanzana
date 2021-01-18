@@ -36,8 +36,7 @@ const Recipe = ({ recipe }) => {
             <br />
 
             <Button variant="primary" onClick={() => setShow(!show)}>
-              {" "}
-              Ingredients{" "}
+              Ingredients
             </Button>
             {show && <Ingredients ingredients={ingredients} />}
           </Card.Body>
