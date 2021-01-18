@@ -12,6 +12,10 @@ const options = {
     // ...add more providers here
   ],
 
+  session: {
+    maxAge: 30 * 24 * 60 * 60,
+  },
+
   callbacks: {
     signIn: async (user, account, profile) => {
       const isAllowedToSignIn = true;
