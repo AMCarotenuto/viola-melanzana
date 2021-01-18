@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
+import axios from "axios";
+
 import Recipe from "./apiComponents/Recipe";
 import { v4 as uuidv4 } from "uuid";
 import { Dropdown, ButtonGroup, SplitButton } from "react-bootstrap";
@@ -15,8 +17,10 @@ export default function RecipesApi() {
   const APP_KEY = "530d7bfa70fdc10559f377c561636888";
   const url = `https://api.edamam.com/search?q=${query1}+${query2}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
+
+
   const getData = async () => {
-    const result = await Axios.get(url);
+    const result = await axios.get(url);
     setRecipes(result.data.hits);
     setProjects(result.data.hits);
     setQuery1("");
@@ -30,12 +34,13 @@ export default function RecipesApi() {
     getData();
   };
 
+
   const onChange1 = (e) => {
     setQuery1(e.target.value);
   };
   const onChange2 = (e) => {
     setQuery2(e.target.value);
-  };
+
 
   useEffect(() => {
     setProjects(recipes);
@@ -48,6 +53,7 @@ export default function RecipesApi() {
     );
     setProjects(filtered);
   }, [filteredRecipes]);
+
 
   return (
     <div className="api">

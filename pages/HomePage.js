@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import CookieConsent from "react-cookie-consent";
 import RecipesApi from "./components/RecipesApi";
 
+
+
 function loginCheck() {
   const [session, loading] = useSession();
   const router = useRouter();
@@ -32,6 +34,7 @@ export default function HomePage() {
           <button className="button-image">
             <Image src="pomodoro.jpg" thumbnail />
           </button>
+
         </Col> */}
         <RecipesApi />
         <CookieConsent

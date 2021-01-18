@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import TopNavbar from "./components/TopNavbar";
 import Footer from "./components/Footer";
+import LikeButton from "./components/LikeButton";
 
 function loginCheck() {
   const [session, loading] = useSession();

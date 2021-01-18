@@ -1,59 +1,31 @@
+import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
+import FilterRecipes from "./FilterRecipes";
 
-// const searchBar = document.getElementById("searchBar-ingredients");
-
-// searchBar.addEventListener("keyup", (e) => {
-//   const searchString = e.target.value.toLowerCase();
-
-//   const filteredIngredients = ingredients.filter((ingredient_name) => {
-//     return ingredient_name.toLowerCase().includes(searchString);
-//   });
-//   displayIngredients(filteredIngredients);
-// });
-
-// const loadIngredients = async () => {
-//   try {
-//     const res = await fetch("http://localhost:3001/ingredient");
-//     ingredients = await res.json();
-//   } catch (err) {
-//     console.error(err);
-//   }
-const inputIngredients = () => {
-  useEffect(() => {
-    const searchBar = document.getElementById("searchBar-ingredients");
-    let ingredient = [];
-    searchBar.addEventListener("keyup", (e) => {
-      const searchString = e.target.value.toLowerCase();
-
-      const filteredIngredients = ingredient.filter((ingredient_name) => {
-        return ingredient_name.toLowerCase().includes(searchString);
+function InputIngredients() {
+  function fetchIngredients(data) {
+    axios
+      .get("http://localhost:3001/ingredients")
+      .then((res) => {
+        // console.log(JSON.stringify(res.data));
+        setIngredient(res.data.records.map((r) => r.fields));
+        ingredient.filter((f) =>
+          f.ingredient_name.toLowerCase().includes(data)
+        );
+      })
+      .catch((err) => {
+        console.error(err);
       });
-      // displayIngredients(filteredIngredients);
-    });
-  }, []);
-  const onSubmitForm = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("http://localhost:3001/ingredients");
-      const ingredient = await res.json();
-      console.log(ingredient.records);
-      const {
-        records: { fields },
-      } = ingredient;
-      console.log(ingredient);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-  const [ingredient, setingredient] = useState("");
+  }
+  const [ingredient, setIngredient] = useState([]);
   return (
-    <div id="searchBar-ingredients">
+    <div>
       <Fragment>
-        <form onSubmit={onSubmitForm}>
+        <form>
           <input
+            id="searchBar-ingredients"
             type="text"
-            value={ingredient}
-            onChange={(e) => setingredient(e.target.value)}
+            onChange={(event) => fetchIngredients(event)}
             placeholder="CHOOSE YOUR INGREDIENTS"
           ></input>
           <button className="button-ingredients">SEARCH</button>
@@ -61,6 +33,6 @@ const inputIngredients = () => {
       </Fragment>
     </div>
   );
-};
+}
 
-export default inputIngredients;
+export default InputIngredients;
