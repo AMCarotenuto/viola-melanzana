@@ -20,11 +20,11 @@ const Recipe = ({ recipe }) => {
             
 
             <Card.Img variant="top" src={image} alt={label} />
-            <br/>
+
+            <br />
 
             <Button variant="primary" onClick={() => setShow(!show)}>
-              {" "}
-              Ingredients{" "}
+              Ingredients
             </Button>
             {show && <Ingredients ingredients={ingredients} />}
             <FbLike />
