@@ -8,14 +8,15 @@ const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
 
   function addToFavourites() {
-    const ingredientName = ingredients.map((h) => h.text);
+    // const ingredientName = ingredients.map((h) => h.text);
+    // const ingredient = JSON.stringify(ingredients);
     axios
       .post("http://localhost:3001/recipes", {
         label,
         image,
         url,
         source,
-        ingredientName,
+        ingredient,
       })
       .then((res) => {
         console.log(res);
@@ -48,7 +49,9 @@ const Recipe = ({ recipe }) => {
             Add to favourites
           </Button>
           <Card.Footer className="text-muted">
-            <a href={url} target="_blank">Recipe from {source}</a>
+            <a href={url} target="_blank">
+              Recipe from {source}
+            </a>
           </Card.Footer>
         </Card>
       </CardDeck>
