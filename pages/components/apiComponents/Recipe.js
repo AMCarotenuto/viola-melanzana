@@ -49,7 +49,7 @@ const Recipe = ({ recipe }) => {
             Add to favourites
           </Button>
           <Card.Footer className="text-muted">
-            <a href={url}>Recipe from {source}</a>
+            <a href={url} target="_blank">Recipe from {source}</a>
           </Card.Footer>
         </Card>
       </CardDeck>
