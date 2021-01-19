@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Ingredients from "./Ingredients";
 import { CardDeck, Card, Button } from "react-bootstrap";
 import axios from "axios";
-import { FacebookShareButton, FacebookIcon } from "react-share";
 
 const Recipe = ({ recipe }) => {
   const { label, image, url, source, ingredients } = recipe.recipe;
