@@ -75,7 +75,7 @@ export default function RecipesApi() {
         </Row>
       </Form>
       </Container>
-      <div className="recipes">
+      
         <div id="filter-bar">
           <Dropdown as={ButtonGroup}>
             <SplitButton
@@ -141,10 +141,12 @@ export default function RecipesApi() {
             </SplitButton>
           </Dropdown>
         </div>
+        <div className="recipes">
         {projects.map((recipe) => (
           <Recipe key={uuidv4()} recipe={recipe} />
-        ))}
-      </div>
+          
+        ))}</div>
+      
     </div>
   );
 }
