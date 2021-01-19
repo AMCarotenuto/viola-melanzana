@@ -79,6 +79,14 @@ export default function RecipesApi() {
             >
               <Dropdown.Item
                 onClick={() => {
+                  setProjects(recipes);
+                }}
+              >
+                All
+              </Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item
+                onClick={() => {
                   setFilteredRecipes("Alcohol-Free");
                 }}
               >

@@ -1,5 +1,6 @@
 import React from "react";
 import TopNavbar from "./components/TopNavbar";
+import MealsPlanner from './components/MealsPlanner'
 import Footer from "./components/Footer";
 import { useSession } from "next-auth/client";
 import { useEffect } from "react";
@@ -21,7 +22,7 @@ export default function Calendar() {
         <div>
        <div>{loginCheck()}</div>
             <TopNavbar />
-            <h1>QUI VA IL CALENDARIO</h1>
+            <MealsPlanner />
             <Footer />
         </div>
     )
