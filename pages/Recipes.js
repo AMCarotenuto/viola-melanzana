@@ -22,7 +22,8 @@ export default function recipes() {
   const fetchRecipes = async () => {
     try {
       const res = await axios.get("http://localhost:3001/recipes");
-      setFavourites(await res.data.records.map((r) => r.fields));
+      // setFavourites(await res.data.records.map((r) => r.fields));
+      setFavourites(await res.data.records);
     } catch (err) {
       console.error(err.message);
     }
