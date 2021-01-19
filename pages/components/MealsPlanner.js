@@ -4,31 +4,35 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 //import "react-datepicker/dist/react-datepicker.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { Container } from "react-bootstrap";
 
 export default function MealsPlanner() {
   const myEventsList = useRef([]);
-
   const localizer = momentLocalizer(moment);
+  // const [suggestionToAdd, setsuggestionToAdd] = useState(suggestionToAdd);
 
-  function addTravelToCalendar(tripLength) {
-    myEventsList.current.splice(0, 1, tripLength);
-  }
+  // const [favourites, setFavourites] = useState([]);
 
-  function addSuggestionToCalendar(sugg) {
-    myEventsList.current.push(sugg);
-  }
+  // const fetchRecipes = async () => {
+  //   try {
+  //     const res = await axios.get("http://localhost:3001/recipes");
+  //     setFavourites(await res.data.records.map((r) => r.fields));
+  //   } catch (err) {
+  //     console.error(err.message);
+  //   }
+  // };
 
-  function calculateDaysLeft(startDate, endDate) {
-    if (!moment.isMoment(startDate)) {
-      startDate = moment(startDate);
-    }
-    if (!moment.isMoment(endDate)) {
-      endDate = moment(endDate);
-    }
+  // useEffect(async () => {
+  //   fetchRecipes();
+  // }, []);
 
-    return endDate.diff(startDate, "days") + 1;
-  }
+  // useEffect(() => {
+  //   setsuggestionToAdd(suggestionToAdd);
+  //   addSuggestionToCalendar(suggestionToAdd);
+  // }, [suggestionToAdd]);
+
+  // function addSuggestionToCalendar(sugg) {
+  //   myEventsList.current.push(sugg);
+  //}
 
   function BigCalendar() {
     return (

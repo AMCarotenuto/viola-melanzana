@@ -2,10 +2,24 @@ import React, { useState } from "react";
 import Ingredients from "./Ingredients";
 import { CardDeck, Card, Button } from "react-bootstrap";
 import { FacebookShareButton, FacebookIcon } from "react-share";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Favourites = ({ recipe }) => {
   const { label, image, url, source, ingredients } = recipe;
   const [show, setShow] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
+
+  function calendarDate(date) {
+    axios
+      .post("http://localhost:3001/recipes", {
+        date,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+  }
 
   return (
     <div className="recipe">
@@ -30,8 +44,13 @@ const Favourites = ({ recipe }) => {
             >
               <FacebookIcon size={32} round />
             </FacebookShareButton>
+            <DatePicker
+              dateFormat="dd/MM/yyyy"
+              selected={startDate}
+              onChange={(date) => calendarDate(date)}
+              
+            />
           </Card.Body>
-          {/* <FbLike /> */}
           <Card.Footer className="text-muted">
             <a href={url}>Recipe from {source}</a>
           </Card.Footer>
