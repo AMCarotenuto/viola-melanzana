@@ -128,7 +128,7 @@ export default function RecipesApi() {
           </Dropdown>
         </div>
         {projects.map((recipe) => (
-          <Recipe key={uuidv4()} recipe={recipe.recipe} />
+          <Recipe key={uuidv4()} recipe={recipe} />
         ))}
       </div>
     </div>
