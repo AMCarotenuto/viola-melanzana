@@ -60,6 +60,25 @@ app.post("/recipes", async (req, res) => {
   });
 });
 
+app.put("/recipes", async (req, res) => {
+  const datain = [
+    {
+      id: req.body.id,
+      fields: { date: req.body.fields.date },
+    },
+  ];
+  console.log(datain);
+  recipesTable.update(datain, { typecast: true }, function (err, records) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    records.forEach(function (record) {
+      console.log(record.getId());
+    });
+  });
+});
+
 app.all((req, res) => {
   res.json({ error: "C'è un disturbo nella forza" });
 });
