@@ -7,9 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
 const Favourites = ({ recipe }) => {
-//   const mappedRecipes = recipe.map((r) => r.fields);
   const { id } = recipe;
-  const { label, image, url, source, ingredients } = recipe.fields;
+  const { label, image, url, source, ingredientName } = recipe.fields;
   const [show, setShow] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
 
@@ -39,7 +38,7 @@ const Favourites = ({ recipe }) => {
             <Button variant="primary" onClick={() => setShow(!show)}>
               Ingredients
             </Button>
-            {show && <Ingredients ingredients={ingredients} />}
+            {show &&  ingredientName }
             <br></br>
             <FacebookShareButton
               url={url}
