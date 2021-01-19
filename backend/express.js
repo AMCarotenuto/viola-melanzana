@@ -30,6 +30,22 @@ app.get("/ingredients", async (req, res) => {
     });
 });
 
+app.get("/recipes", async (req, res) => {
+  fetch(
+    `https://api.airtable.com/v0/appd8eN5Q77OzFlvy/recipes?view=Grid%20view`,
+    {
+      headers: { Authorization: `Bearer keyR00qDFV6vvxMq2` }, // API key
+    }
+  )
+    .then((res) => res.json())
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 app.post("/recipes", async (req, res) => {
   const datain = req.body;
   console.log(req.body);
@@ -42,25 +58,6 @@ app.post("/recipes", async (req, res) => {
       console.log(record.getId());
     });
   });
-  // fetch(
-  //   `https://api.airtable.com/v0/appd8eN5Q77OzFlvy/recipes?view=Grid%20view`,
-  //   {
-  //     headers: {
-  //       Authorization: `Bearer keyR00qDFV6vvxMq2`,
-  //       "Content-Type": "application/json",
-  //     }, // API key
-  //     method: "post",
-  //     body: JSON.stringify(payload),
-  //   }
-  // )
-  //   .then((res) => res.json())
-  //   .then((result) => {
-  //     console.log(result);
-  //     res.json(result);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
 });
 
 app.all((req, res) => {

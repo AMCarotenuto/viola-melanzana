@@ -122,13 +122,13 @@ export default function RecipesApi() {
                   setFilteredRecipes("Vegetarian");
                 }}
               >
-                Vegetrian
+                Vegetarian
               </Dropdown.Item>
             </SplitButton>
           </Dropdown>
         </div>
         {projects.map((recipe) => (
-          <Recipe key={uuidv4()} recipe={recipe} />
+          <Recipe key={uuidv4()} recipe={recipe.recipe} />
         ))}
       </div>
     </div>
