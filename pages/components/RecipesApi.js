@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Recipe from "./apiComponents/Recipe";
 import { v4 as uuidv4 } from "uuid";
-import { Dropdown, ButtonGroup, SplitButton } from "react-bootstrap";
+import { Dropdown, ButtonGroup, SplitButton, Container, Form, Row, Col } from "react-bootstrap";
 
 export default function RecipesApi() {
   const [query1, setQuery1] = useState("");
@@ -52,7 +52,10 @@ export default function RecipesApi() {
 
   return (
     <div className="api">
-      <form className="search-form" onSubmit={onSubmit}>
+      <Container>
+      <Form className="search-form" onSubmit={onSubmit}>
+        <Row>
+          <Col>
         <input
           type="text"
           placeholder="Choose your ingredient"
@@ -68,7 +71,10 @@ export default function RecipesApi() {
           value={query2}
         />
         <input type="submit" value="search" />
-      </form>
+        </Col>
+        </Row>
+      </Form>
+      </Container>
       <div className="recipes">
         <div id="filter-bar">
           <Dropdown as={ButtonGroup}>
