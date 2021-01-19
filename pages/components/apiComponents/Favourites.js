@@ -4,16 +4,20 @@ import { CardDeck, Card, Button } from "react-bootstrap";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 const Favourites = ({ recipe }) => {
-  const { label, image, url, source, ingredients } = recipe;
+//   const mappedRecipes = recipe.map((r) => r.fields);
+  const { id } = recipe;
+  const { label, image, url, source, ingredients } = recipe.fields;
   const [show, setShow] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
 
   function calendarDate(date) {
-    axios
-      .post("http://localhost:3001/recipes", {
-        date,
+    const res = axios
+      .put("http://localhost:3001/recipes", {
+        id: recipe.id,
+        fields: { date },
       })
       .then((res) => {
         console.log(res);
@@ -48,7 +52,6 @@ const Favourites = ({ recipe }) => {
               dateFormat="dd/MM/yyyy"
               selected={startDate}
               onChange={(date) => calendarDate(date)}
-              
             />
           </Card.Body>
           <Card.Footer className="text-muted">
