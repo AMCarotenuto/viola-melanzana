@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import Ingredients from "./Ingredients";
-import FbLike from "../FbLikeButton";
 import { CardDeck, Card, Button } from "react-bootstrap";
 import axios from "axios";
-import {
-  FacebookShareButton,
-  FacebookIcon,
-} from "react-share"
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 const Recipe = ({ recipe }) => {
   const { label, image, url, source, ingredients } = recipe.recipe;
@@ -52,14 +48,6 @@ const Recipe = ({ recipe }) => {
           >
             Add to favourites
           </Button>
-          <FacebookShareButton
-            url={url}
-            quote={label}
-            className="Demo__some-network__share-button"
-          >
-            <FacebookIcon size={32} round />
-          </FacebookShareButton>
-
           <Card.Footer className="text-muted">
             <a href={url}>Recipe from {source}</a>
           </Card.Footer>

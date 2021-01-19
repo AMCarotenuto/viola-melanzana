@@ -3,6 +3,7 @@ import Ingredients from "./Ingredients";
 import FbLike from "../FbLikeButton";
 import { CardDeck, Card, Button } from "react-bootstrap";
 import axios from "axios";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 const Favourites = ({ recipe }) => {
   const { label, image, url, source, ingredients } = recipe;
@@ -23,6 +24,14 @@ const Favourites = ({ recipe }) => {
               Ingredients
             </Button>
             {show && <Ingredients ingredients={ingredients} />}
+            <br></br>
+            <FacebookShareButton
+              url={url}
+              quote={label}
+              className="Demo__some-network__share-button"
+            >
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
           </Card.Body>
           {/* <FbLike /> */}
           <Card.Footer className="text-muted">
