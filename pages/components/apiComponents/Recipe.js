@@ -8,7 +8,7 @@ const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
 
   function addToFavourites() {
-    // const ingredientName = ingredients.map((h) => h.text);
+    const ingredientName = ingredients.map((h) => h.text);
     // const ingredient = JSON.stringify(ingredients);
     axios
       .post("http://localhost:3001/recipes", {
@@ -16,7 +16,7 @@ const Recipe = ({ recipe }) => {
         image,
         url,
         source,
-        ingredient,
+        ingredientName,
       })
       .then((res) => {
         console.log(res);

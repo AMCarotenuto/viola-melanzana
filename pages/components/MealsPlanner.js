@@ -2,57 +2,47 @@ import { useState, useEffect, useRef } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 //import DatePicker from "react-datepicker";
 import moment from "moment";
+import { v4 as uuidv4 } from "uuid";
 //import "react-datepicker/dist/react-datepicker.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-export default function MealsPlanner() {
+export default function MealsPlanner({ r }) {
   const myEventsList = useRef([]);
+  const [suggestionToAdd, setSuggestionToAdd] = useState();
+  const [event, setEvent] = useState();
+  const { label, image, url, source, ingredientName, date } = r;
   const localizer = momentLocalizer(moment);
-  // const [suggestionToAdd, setsuggestionToAdd] = useState(suggestionToAdd);
 
-  // const [favourites, setFavourites] = useState([]);
+  // function BigCalendar() {
+  //   return (
+  //     <div className="app">
+  //       <Calendar
+  //         localizer={localizer}
+  //         events={myEventsList.current}
+  //         startAccessor="start"
+  //         endAccessor="end"
+  //         style={{ height: 500 }}
+  //       />
+  //     </div>
+  //   );
+  // }
 
-  // const fetchRecipes = async () => {
-  //   try {
-  //     const res = await axios.get("http://localhost:3001/recipes");
-  //     setFavourites(await res.data.records.map((r) => r.fields));
-  //   } catch (err) {
-  //     console.error(err.message);
-  //   }
-  // };
-
-  // useEffect(async () => {
-  //   fetchRecipes();
-  // }, []);
-
-  // useEffect(() => {
-  //   setsuggestionToAdd(suggestionToAdd);
-  //   addSuggestionToCalendar(suggestionToAdd);
-  // }, [suggestionToAdd]);
-
-  // function addSuggestionToCalendar(sugg) {
-  //   myEventsList.current.push(sugg);
-  //}
-
-  function BigCalendar() {
-    return (
-      <div className="app">
-        <Calendar
-          localizer={localizer}
-          events={myEventsList.current}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 500 }}
-        />
-      </div>
-    );
+  function addSuggestionToCalendar(sugg) {
+    myEventsList.current.push(sugg);
   }
+
+  useEffect(async () => {
+    setEvent({
+      start: date,
+      end: date,
+      title: label,
+    });
+  }, []);
 
   return (
     <div className="calendar-background">
-      <br />
-      <BigCalendar />
-      <br />
+      {addSuggestionToCalendar(event)}
+      {/* <BigCalendar /> */}
     </div>
   );
 }

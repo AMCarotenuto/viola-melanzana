@@ -3,9 +3,13 @@ import TopNavbar from "./components/TopNavbar";
 import MealsPlanner from "./components/MealsPlanner";
 import Footer from "./components/Footer";
 import { useSession } from "next-auth/client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import { v4 as uuidv4 } from "uuid";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
 function loginCheck() {
   const [session, loading] = useSession();
@@ -18,27 +22,53 @@ function loginCheck() {
   }, [session, loading]);
 }
 
-export default function Calendar() {
+export default function MealsCalendar() {
+  const [suggestionToAdd, setSuggestionToAdd] = useState();
   const [favourites, setFavourites] = useState([]);
+  const myEventsList = useRef([]);
+  const localizer = momentLocalizer(moment);
+  const [event, setEvent] = useState();
 
-  const fetchRecipes = async () => {
-    try {
-      const res = await axios.get("http://localhost:3001/recipes");
-      setFavourites(await res.data.records.map((r) => r.fields));
-    } catch (err) {
-      console.error(err.message);
-    }
+  const fetchRecipes = async (res, end) => {
+    res = await axios.get("http://localhost:3001/recipes");
+    const fMap = res.data.records.map((r) => r.fields);
+    end = setFavourites(fMap);
+    // setFavourites(res.data.records);
   };
 
-  useEffect(async () => {
+  useEffect(() => {
     fetchRecipes();
   }, []);
+
+  function BigCalendar() {
+    return (
+      <div className="app">
+        <Calendar
+          localizer={localizer}
+          events={myEventsList.current}
+          startAccessor="start"
+          endAccessor="end"
+          style={{ height: 500 }}
+        />
+      </div>
+    );
+  }
+
+  function addSuggestionToCalendar(sugg) {
+    myEventsList.current.push(sugg);
+  }
 
   return (
     <div>
       <div>{loginCheck()}</div>
       <TopNavbar />
-      <MealsPlanner />
+      {console.log(favourites)}
+      <>
+        {favourites.map((r) => (
+          <MealsPlanner key={uuidv4()} r={r} />
+        ))}
+      </>
+      <BigCalendar />
       <Footer />
     </div>
   );
