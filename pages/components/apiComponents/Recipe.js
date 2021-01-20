@@ -29,7 +29,7 @@ const Recipe = ({ recipe }) => {
       <CardDeck>
         <Card className="text-center">
           <Card.Header>
-            <h2>{label}</h2>
+            {label}
           </Card.Header>
           <Card.Body>
             <Card.Img variant="top" src={image} alt={label} />
