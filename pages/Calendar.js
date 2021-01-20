@@ -35,14 +35,15 @@ export default function MealsCalendar() {
   };
 
   function calendarRecipes(e) {
-    if (myEventsList.current.length === 0)
-      return e.map((r) =>
+    if (myEventsList.current.length === 0) {
+      e.map((r) =>
         myEventsList.current.push({
           start: r.date,
           end: r.date,
           title: r.label,
         })
       );
+    }
   }
 
   useEffect(() => {
