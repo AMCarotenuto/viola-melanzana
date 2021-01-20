@@ -33,7 +33,7 @@ export default function MealsCalendar() {
     end = setFavourites(fMap);
   };
 
-  function Porcatroia(e) {
+  function calendarRecipes(e) {
     // const eMapDate = favourites.map((e) => e.date);
     // const eMapLabel = favourites.map((e) => e.label);
     // const event = {
@@ -96,7 +96,7 @@ export default function MealsCalendar() {
           <MealsPlanner key={uuidv4()} r={r} />
           ))}
         </> */}
-      {Porcatroia(favourites)}
+      {calendarRecipes(favourites)}
       <BigCalendar />
       {/* {event.forEach((e) => addSuggestionToCalendar(e))} */}
       <Footer />
