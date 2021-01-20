@@ -26,6 +26,7 @@ export default function MealsCalendar() {
   const [favourites, setFavourites] = useState([]);
   const myEventsList = useRef([]);
   const localizer = momentLocalizer(moment);
+  const bla = [""];
 
   const fetchRecipes = async (res, end) => {
     res = await axios.get("http://localhost:3001/recipes");
@@ -34,44 +35,19 @@ export default function MealsCalendar() {
   };
 
   function calendarRecipes(e) {
-    // const eMapDate = favourites.map((e) => e.date);
-    // const eMapLabel = favourites.map((e) => e.label);
-    // const event = {
-    //   start: { eMapDate },
-    //   end: { eMapDate },
-    //   title: { eMapLabel },
-    // };
-
-    // const  eMapStart  = event.map((e) => e.start)
-    // const  eMapEnd  = event.map((e) => e.end);
-    // const  eMapTitle  = event.map((e) => e.label);
-    e.map((r) =>
-      myEventsList.current.push({
-        start: r.date,
-        end: r.date,
-        title: r.label,
-      })
-    );
-    console.log(myEventsList.current);
+    if (myEventsList.current.length === 0)
+      return e.map((r) =>
+        myEventsList.current.push({
+          start: r.date,
+          end: r.date,
+          title: r.label,
+        })
+      );
   }
 
   useEffect(() => {
     fetchRecipes();
   }, []);
-  // useEffect(async () => {
-  //   setEvent({
-  //     start: favourites.map((r) => r.date),
-  //     end: favourites.map((r) => r.date),
-  //     title: favourites.map((r) => r.label),
-  //   });
-  // }, []);
-
-  // function addSuggestionToCalendar() {
-  //   event.forEach((e) => myEventsList.current.push(e));
-  // }
-  // useEffect(() => {
-  //   // addSuggestionToCalendar();
-  // }, []);
 
   function BigCalendar() {
     return (
@@ -91,14 +67,8 @@ export default function MealsCalendar() {
     <div>
       <div>{loginCheck()}</div>
       <TopNavbar />
-      {/* <>
-        {favourites.map((r) => (
-          <MealsPlanner key={uuidv4()} r={r} />
-          ))}
-        </> */}
       {calendarRecipes(favourites)}
       <BigCalendar />
-      {/* {event.forEach((e) => addSuggestionToCalendar(e))} */}
       <Footer />
     </div>
   );
