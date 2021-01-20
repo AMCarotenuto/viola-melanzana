@@ -10,7 +10,9 @@ export default function TopNavbar() {
 
   return (
     <>
-      <Navbar className="custom-navbar">
+      <Navbar  collapseOnSelect expand="lg" className="custom-navbar">
+      <Navbar.Toggle  aria-controls="responsive-navbar-nav"/>
+        <Navbar.Collapse className="justify-content-end">
         <Navbar.Brand href="/HomePage">
           <img
             src="/logo.png"
@@ -30,8 +32,7 @@ export default function TopNavbar() {
             Calendar
           </Nav.Link>
         </Nav>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
+        
           <Navbar>
             <div className="img-container">
               <img className="img-profile" src={showProfilePicture()} />

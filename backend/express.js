@@ -12,6 +12,7 @@ var Airtable = require("airtable");
 var base = new Airtable({ apiKey: "keyR00qDFV6vvxMq2" }).base(
   "appd8eN5Q77OzFlvy"
 );
+const recipesTable = base("recipes");
 
 app.get("/ingredients", async (req, res) => {
   fetch(
@@ -27,6 +28,55 @@ app.get("/ingredients", async (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.get("/recipes", async (req, res) => {
+  fetch(
+    `https://api.airtable.com/v0/appd8eN5Q77OzFlvy/recipes?view=Grid%20view`,
+    {
+      headers: { Authorization: `Bearer keyR00qDFV6vvxMq2` }, // API key
+    }
+  )
+    .then((res) => res.json())
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.post("/recipes", async (req, res) => {
+  const datain = req.body;
+  console.log(req.body);
+  recipesTable.create(datain, { typecast: true }, function (err, records) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    records.forEach(function (record) {
+      console.log(record.getId());
+    });
+  });
+});
+
+app.put("/recipes", async (req, res) => {
+  const datain = [
+    {
+      id: req.body.id,
+      fields: { date: req.body.fields.date },
+    },
+  ];
+  console.log(datain);
+  recipesTable.update(datain, { typecast: true }, function (err, records) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    records.forEach(function (record) {
+      console.log(record.getId());
+    });
+  });
 });
 
 app.all((req, res) => {

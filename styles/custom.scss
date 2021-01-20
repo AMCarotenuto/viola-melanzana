@@ -2,7 +2,12 @@
 $theme-colors: (
   "primary": #e4e4e4,
 );
+//like button
 
+.customContainer {
+  margin-top: 5px;
+}
+//like button
 .flexcontainer {
   display: flex;
   justify-content: center;
@@ -233,7 +238,7 @@ input.datapicker-input[type="text"] {
 }
 
 .dropdown-item[role="button"] {
-  color: white;
+  color: purple;
 }
 
 .header-new-trip,
@@ -612,7 +617,7 @@ input[type="file"] {
 }
 
 .search-form {
-  width: 60rem;
+  width: auto;
   height: 10rem;
   display: flex;
   justify-content: center;
@@ -623,7 +628,6 @@ input[type="file"] {
 }
 
 .search-form input {
-  font-size: 1.6rem;
   border: none;
   border-bottom: 0.1rem solid #ccc;
   margin: 0 0.5rem;
@@ -632,18 +636,25 @@ input[type="file"] {
 }
 
 .search-form input[type="text"] {
-  padding: 0 5rem;
-  width: 50%;
+
+  font-size: 1rem;
+  padding: 0 2rem;
+  width: 300px;
+
   height: 50px;
   border-radius: 5px;
   background-color: purple;
   color: white;
   font-family: Comfortaa-Light;
+
+  float: left;
 }
 
 .search-form input[type="submit"] {
-  width: 25%;
+  width: 100px;
   height: 50px;
+  padding: 0 1rem;
+
   text-transform: uppercase;
   background-color:white;
   color: purple;
@@ -671,6 +682,9 @@ input[type="file"] {
 
 .card {
   margin: 3rem;
+
+  min-height: 550px;
+
   display: flex;
   flex-direction: column;
   position: relative;
@@ -703,4 +717,16 @@ input[type="file"] {
   color: purple;
   font-family: Comfortaa-Light;
   padding-right: 0.5rem;
+
 }
+
+.calendar-background{
+  background-color: #e5e5e5;
+}
+
+.nav-link a{
+  font-weight: bold;
+}
+
+@import "../node_modules/react-big-calendar/lib/css/react-big-calendar.css"
+
