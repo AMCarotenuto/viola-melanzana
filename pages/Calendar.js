@@ -23,22 +23,55 @@ function loginCheck() {
 }
 
 export default function MealsCalendar() {
-  const [suggestionToAdd, setSuggestionToAdd] = useState();
   const [favourites, setFavourites] = useState([]);
   const myEventsList = useRef([]);
   const localizer = momentLocalizer(moment);
-  const [event, setEvent] = useState();
 
   const fetchRecipes = async (res, end) => {
     res = await axios.get("http://localhost:3001/recipes");
     const fMap = res.data.records.map((r) => r.fields);
     end = setFavourites(fMap);
-    // setFavourites(res.data.records);
   };
+
+  function Porcatroia(e) {
+    // const eMapDate = favourites.map((e) => e.date);
+    // const eMapLabel = favourites.map((e) => e.label);
+    // const event = {
+    //   start: { eMapDate },
+    //   end: { eMapDate },
+    //   title: { eMapLabel },
+    // };
+
+    // const  eMapStart  = event.map((e) => e.start)
+    // const  eMapEnd  = event.map((e) => e.end);
+    // const  eMapTitle  = event.map((e) => e.label);
+    e.map((r) =>
+      myEventsList.current.push({
+        start: r.date,
+        end: r.date,
+        title: r.label,
+      })
+    );
+    console.log(myEventsList.current);
+  }
 
   useEffect(() => {
     fetchRecipes();
   }, []);
+  // useEffect(async () => {
+  //   setEvent({
+  //     start: favourites.map((r) => r.date),
+  //     end: favourites.map((r) => r.date),
+  //     title: favourites.map((r) => r.label),
+  //   });
+  // }, []);
+
+  // function addSuggestionToCalendar() {
+  //   event.forEach((e) => myEventsList.current.push(e));
+  // }
+  // useEffect(() => {
+  //   // addSuggestionToCalendar();
+  // }, []);
 
   function BigCalendar() {
     return (
@@ -54,21 +87,18 @@ export default function MealsCalendar() {
     );
   }
 
-  function addSuggestionToCalendar(sugg) {
-    myEventsList.current.push(sugg);
-  }
-
   return (
     <div>
       <div>{loginCheck()}</div>
       <TopNavbar />
-      {console.log(favourites)}
-      <>
+      {/* <>
         {favourites.map((r) => (
           <MealsPlanner key={uuidv4()} r={r} />
-        ))}
-      </>
+          ))}
+        </> */}
+      {Porcatroia(favourites)}
       <BigCalendar />
+      {/* {event.forEach((e) => addSuggestionToCalendar(e))} */}
       <Footer />
     </div>
   );
