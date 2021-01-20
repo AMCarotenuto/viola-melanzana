@@ -636,14 +636,17 @@ input[type="file"] {
 }
 
 .search-form input[type="text"] {
+
   font-size: 1rem;
   padding: 0 2rem;
   width: 300px;
+
   height: 50px;
   border-radius: 5px;
   background-color: purple;
   color: white;
   font-family: Comfortaa-Light;
+
   float: left;
 }
 
@@ -651,6 +654,7 @@ input[type="file"] {
   width: 100px;
   height: 50px;
   padding: 0 1rem;
+
   text-transform: uppercase;
   background-color:white;
   color: purple;
@@ -678,7 +682,9 @@ input[type="file"] {
 
 .card {
   margin: 3rem;
+
   min-height: 550px;
+
   display: flex;
   flex-direction: column;
   position: relative;
@@ -711,6 +717,7 @@ input[type="file"] {
   color: purple;
   font-family: Comfortaa-Light;
   padding-right: 0.5rem;
+
 }
 
 .calendar-background{
@@ -722,3 +729,4 @@ input[type="file"] {
 }
 
 @import "../node_modules/react-big-calendar/lib/css/react-big-calendar.css"
+

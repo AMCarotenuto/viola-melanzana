@@ -8,8 +8,6 @@ import { useRouter } from "next/router";
 import CookieConsent from "react-cookie-consent";
 import RecipesApi from "./components/RecipesApi";
 
-
-
 function loginCheck() {
   const [session, loading] = useSession();
   const router = useRouter();
@@ -27,7 +25,9 @@ export default function HomePage() {
       <div>{loginCheck()}</div>
       <TopNavbar />
       <div className="main-homePage">
+
         {/* <br />
+
         <InputIngredients />
         <br />
         <Col xs={6} md={4}>
