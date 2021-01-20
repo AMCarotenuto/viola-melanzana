@@ -79,6 +79,20 @@ app.put("/recipes", async (req, res) => {
   });
 });
 
+app.delete("/delete", async (req, res) => {
+  const datain = {
+    id: req.body.id,
+  };
+console.log(datain)
+  recipesTable.destroy(datain, function (err, deletedRecords) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log("Deleted", deletedRecords.length, "records");
+  });
+});
+
 app.all((req, res) => {
   res.json({ error: "C'è un disturbo nella forza" });
 });

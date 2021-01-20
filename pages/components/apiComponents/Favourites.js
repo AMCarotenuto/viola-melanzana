@@ -24,6 +24,15 @@ const Favourites = ({ recipe }) => {
       });
   }
 
+  function removeFavourite() {
+    axios
+      .delete("http://localhost:3001/recipes", { data: { id: id } })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+  }
+
   return (
     <div className="recipe">
       <CardDeck>
@@ -38,7 +47,7 @@ const Favourites = ({ recipe }) => {
             <Button variant="primary" onClick={() => setShow(!show)}>
               Ingredients
             </Button>
-            {show &&  ingredientName }
+            {show && ingredientName}
             <br></br>
             <FacebookShareButton
               url={url}
@@ -52,6 +61,9 @@ const Favourites = ({ recipe }) => {
               selected={startDate}
               onChange={(date) => calendarDate(date)}
             />
+            <Button onClick={() => removeFavourite()}>
+              Remove from favourites
+            </Button>
           </Card.Body>
           <Card.Footer className="text-muted">
             <a href={url}>Recipe from {source}</a>
