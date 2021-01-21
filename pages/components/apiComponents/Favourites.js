@@ -24,6 +24,19 @@ const Favourites = ({ recipe }) => {
       });
   }
 
+  async function removeFavourite() {
+    var Airtable = require("airtable");
+    var base = new Airtable({ apiKey: "keyR00qDFV6vvxMq2" }).base(
+      "appd8eN5Q77OzFlvy"
+    );
+    base("recipes").destroy(id, function (err, deletedRecord) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log("Deleted record", deletedRecord.id);
+    });
+  }
   return (
     <div className="recipe">
       <CardDeck>
@@ -38,7 +51,7 @@ const Favourites = ({ recipe }) => {
             <Button variant="primary" onClick={() => setShow(!show)}>
               Ingredients
             </Button>
-            {show &&  ingredientName }
+            {show && ingredientName}
             <br></br>
             <FacebookShareButton
               url={url}
@@ -52,6 +65,9 @@ const Favourites = ({ recipe }) => {
               selected={startDate}
               onChange={(date) => calendarDate(date)}
             />
+            <Button onClick={() => removeFavourite()}>
+              Remove from favourites
+            </Button>
           </Card.Body>
           <Card.Footer className="text-muted">
             <a href={url}>Recipe from {source}</a>

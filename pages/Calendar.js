@@ -1,6 +1,5 @@
 import React from "react";
 import TopNavbar from "./components/TopNavbar";
-import MealsPlanner from "./components/MealsPlanner";
 import Footer from "./components/Footer";
 import { useSession } from "next-auth/client";
 import { useEffect, useState, useRef } from "react";
@@ -35,14 +34,15 @@ export default function MealsCalendar() {
   };
 
   function calendarRecipes(e) {
-    if (myEventsList.current.length === 0)
-      return e.map((r) =>
+    if (myEventsList.current.length === 0) {
+      e.map((r) =>
         myEventsList.current.push({
           start: r.date,
           end: r.date,
           title: r.label,
         })
       );
+    }
   }
 
   useEffect(() => {
