@@ -22,19 +22,21 @@ function LoginPage() {
   return (
     <>
       <div>{loginCheck()}</div>
-      <Container fluid>
-        <Row>
-          <Col
-            className="logincover"
-            style={{ backgroundImage: 'url("melanzane-background.jpg")' }}
-          />
+      <Container
+        fluid
+        className="logincover"
+        style={{ backgroundImage: 'url("melanzane-background.jpg")' }}
+      >
+        <div class="coverCaption">
+            <div class="coverCaptionCopy">
+      
           <div className="loginformcontainer">
             {/* <img className="logo" src="viola-melanzana.png" width="60%" /> */}
 
             <div className="case">
               {!session && (
                 <>
-                  Not signed in
+                  <h2 style={{color:"black"}}>Welcome to VIOLA MELANZANA</h2>
                   <br />
                   <br />
                   <button
@@ -72,9 +74,7 @@ function LoginPage() {
                   <br />
                   <button
                     className="default-button"
-                    onClick={() =>
-                      signOut({ callbackUrl: "/" })
-                    }
+                    onClick={() => signOut({ callbackUrl: "/" })}
                   >
                     Sign out
                   </button>
@@ -82,9 +82,11 @@ function LoginPage() {
               )}
             </div>
           </div>
-        </Row>
+          </div></div>
+  
+  
       </Container>
-      <Footer/>
+      <Footer />
     </>
   );
 }
