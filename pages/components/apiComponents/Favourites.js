@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Ingredients from "./Ingredients";
-import { CardDeck, Card, Button } from "react-bootstrap";
+import { CardDeck, Card, Button, Container } from "react-bootstrap";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -13,15 +13,11 @@ const Favourites = ({ recipe }) => {
   const [startDate, setStartDate] = useState(new Date());
 
   function calendarDate(date) {
-    const res = axios
-      .put("http://localhost:3001/recipes", {
-        id: recipe.id,
-        fields: { date },
-      })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+    const res = axios.put("http://localhost:3001/recipes", {
+      id: recipe.id,
+      fields: { date },
+    });
+    setStartDate(date);
   }
 
   async function removeFavourite() {
@@ -45,14 +41,14 @@ const Favourites = ({ recipe }) => {
             <h2>{label}</h2>
           </Card.Header>
           <Card.Body>
-            <Card.Img variant="top" src={image} alt={label} />
+            <Card.Img variant="top" src={image} alt={label} style={{maxWidth: 332}} />
             <br />
-
             <Button variant="primary" onClick={() => setShow(!show)}>
               Ingredients
             </Button>
+            <Container>
             {show && ingredientName}
-            <br></br>
+           </Container>
             <FacebookShareButton
               url={url}
               quote={label}
@@ -65,12 +61,15 @@ const Favourites = ({ recipe }) => {
               selected={startDate}
               onChange={(date) => calendarDate(date)}
             />
+            <br/>
             <Button onClick={() => removeFavourite()}>
               Remove from favourites
             </Button>
           </Card.Body>
           <Card.Footer className="text-muted">
-            <a href={url} target="_blank">Recipe from {source}</a>
+            <a href={url} target="_blank">
+              Recipe from {source}
+            </a>
           </Card.Footer>
         </Card>
       </CardDeck>
