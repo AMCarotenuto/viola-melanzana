@@ -3,10 +3,14 @@
 This is a Next.js project bootstrapped with create-next-app.
 
 
-Getting Started.
-Git clone: https://github.com/finalprojectgruppo1/viola-melanzana.git.
-cd viola-melanzana.
-npm install.
+Getting Started
+
+Git clone: https://github.com/finalprojectgruppo1/viola-melanzana.git
+
+cd viola-melanzana
+
+npm install
+
 First, run the development server:
 
 npm run dev
