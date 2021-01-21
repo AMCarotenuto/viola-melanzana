@@ -3,7 +3,7 @@
 This is a Next.js project bootstrapped with create-next-app.
 
 
-Getting Started:
+<strong>Getting Started:<strong/>
 
 Git clone: https://github.com/finalprojectgruppo1/viola-melanzana.git
 
