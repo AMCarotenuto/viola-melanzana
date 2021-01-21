@@ -1,6 +1,5 @@
 import React from "react";
 import TopNavbar from "./components/TopNavbar";
-import MealsPlanner from "./components/MealsPlanner";
 import Footer from "./components/Footer";
 import { useSession } from "next-auth/client";
 import { useEffect, useState, useRef } from "react";

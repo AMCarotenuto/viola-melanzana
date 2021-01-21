@@ -24,15 +24,19 @@ const Favourites = ({ recipe }) => {
       });
   }
 
-  function removeFavourite() {
-    axios
-      .delete("http://localhost:3001/recipes", { data: { id: id } })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+  async function removeFavourite() {
+    var Airtable = require("airtable");
+    var base = new Airtable({ apiKey: "keyR00qDFV6vvxMq2" }).base(
+      "appd8eN5Q77OzFlvy"
+    );
+    base("recipes").destroy(id, function (err, deletedRecord) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log("Deleted record", deletedRecord.id);
+    });
   }
-
   return (
     <div className="recipe">
       <CardDeck>

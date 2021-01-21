@@ -14,22 +14,6 @@ var base = new Airtable({ apiKey: "keyR00qDFV6vvxMq2" }).base(
 );
 const recipesTable = base("recipes");
 
-app.get("/ingredients", async (req, res) => {
-  fetch(
-    `https://api.airtable.com/v0/appd8eN5Q77OzFlvy/ingredients?view=Grid%20view`,
-    {
-      headers: { Authorization: `Bearer keyR00qDFV6vvxMq2` }, // API key
-    }
-  )
-    .then((res) => res.json())
-    .then((result) => {
-      res.json(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
 app.get("/recipes", async (req, res) => {
   fetch(
     `https://api.airtable.com/v0/appd8eN5Q77OzFlvy/recipes?view=Grid%20view`,
@@ -76,20 +60,6 @@ app.put("/recipes", async (req, res) => {
     records.forEach(function (record) {
       console.log(record.getId());
     });
-  });
-});
-
-app.delete("/delete", async (req, res) => {
-  const datain = {
-    id: req.body.id,
-  };
-console.log(datain)
-  recipesTable.destroy(datain, function (err, deletedRecords) {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log("Deleted", deletedRecords.length, "records");
   });
 });
 
