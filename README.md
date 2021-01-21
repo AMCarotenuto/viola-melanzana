@@ -29,16 +29,17 @@ Client dependecies:
     "react-cookie-consent": "^6.2.1",
     "react-datepicker": "^3.4.1",
     "react-dom": "^17.0.1",
-
     "react-share": "^4.3.1",
     "sass": "^1.30.0",
     "uuid": "^8.3.2"
   }
+  
   dev dependecies:
   {
     "eslint-plugin-react-hooks": "^4.2.0"
 
   }
+
 
 Backend
 
@@ -49,7 +50,9 @@ npm install
 Start the backend server:
 
 node express.js
+
 app will be listening on http://localhost:3001
+
 backend dependencies:
 {
     "airtable": "^0.10.1",
