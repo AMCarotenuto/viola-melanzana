@@ -21,8 +21,9 @@ yarn dev
 
 Open http://localhost:3000 with your browser to see the result.
 
-Client dependecies:
+<strong>Client dependecies:</strong>
 {
+    "airtable"
     "axios",
     "bootstrap",
     "moment" ,
@@ -46,7 +47,7 @@ Client dependecies:
   }
 
 
-Backend
+<strong>Backend</strong>
 
 To start the backend server:
 
