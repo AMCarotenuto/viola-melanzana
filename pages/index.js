@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Head>
         <title>Viola Melanzana</title>
-        <link rel="icon" href="/melanzana.ico" />
+        <link rel="icon" href="./melanzana.ico" />
       </Head>
 
       <LoginPage />
