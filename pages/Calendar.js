@@ -25,7 +25,6 @@ export default function MealsCalendar() {
   const [favourites, setFavourites] = useState([]);
   const myEventsList = useRef([]);
   const localizer = momentLocalizer(moment);
-  const bla = [""];
 
   const fetchRecipes = async (res, end) => {
     res = await axios.get("http://localhost:3001/recipes");

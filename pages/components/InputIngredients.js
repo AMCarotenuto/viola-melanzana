@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
-import FilterRecipes from "./FilterRecipes";
 
 function InputIngredients() {
   function fetchIngredients(data) {
