@@ -44,6 +44,7 @@ const Recipe = ({ recipe }) => {
           >
             Add to favourites
           </Button>
+          <br />
           <Card.Footer className="text-muted">
             <a href={url} target="_blank">
               Recipe from {source}
