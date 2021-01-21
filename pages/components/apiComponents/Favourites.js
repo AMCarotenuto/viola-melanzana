@@ -45,7 +45,7 @@ const Favourites = ({ recipe }) => {
             <h2>{label}</h2>
           </Card.Header>
           <Card.Body>
-            <Card.Img variant="top" src={image} alt={label} />
+            <Card.Img variant="top" src={image} alt={label} style={{maxWidth: 332}} />
             <br />
             <Button variant="primary" onClick={() => setShow(!show)}>
               Ingredients

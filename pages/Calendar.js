@@ -66,8 +66,10 @@ export default function MealsCalendar() {
     <div>
       <div>{loginCheck()}</div>
       <TopNavbar />
+      <div className= "calendar-background">
       {calendarRecipes(favourites)}
       <BigCalendar />
+      <br /></div>
       <Footer />
     </div>
   );

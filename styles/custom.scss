@@ -69,6 +69,10 @@ input[type="submit"] {
   font-family: Comfortaa-Light;
   text-align: center;
   padding: 10px 0;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 25%;
+  background-color: #e5e5e5;
 }
 
 .app,
@@ -260,11 +264,6 @@ ul {
   width: 50%;
 }
 
-.loginformcontainer {
-  background-color: white;
-  width: 50%;
-}
-
 .logo {
   padding-top: 15%;
   padding-bottom: 100px;
@@ -435,6 +434,19 @@ input[type="file"] {
 
 .nav-link a{
   font-weight: bold;
+}
+
+.coverCaption{
+  display: table;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.coverCaptionCopy{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 @import "../node_modules/react-big-calendar/lib/css/react-big-calendar.css"
