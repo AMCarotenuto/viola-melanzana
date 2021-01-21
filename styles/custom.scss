@@ -31,6 +31,8 @@ button.btn.btn-primary[type="button"] {
   font-family: Comfortaa-Light;
   text-align: center;
   border: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .button-to-trip,
 .default-button,
@@ -70,14 +72,10 @@ input[type="submit"] {
 }
 
 .app,
-.background-location,
-.create-new-trip-title,
-.data-travel-container,
 .card,
 .description-profile,
 .img-container,
 .logo,
-.location-logo,
 .modal-body,
 .modal-title.h4 {
   display: block;
@@ -134,39 +132,9 @@ p {
   font-family: Comfortaa-Light;
 }
 
-/*................................ AUTOCOMPLETE PLACE ..............................*/
-
-.autocomplete-place {
-  position: relative;
-  &-results {
-    position: absolute;
-    background-color: white;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #00000011;
-  }
-  &-items {
-    list-style: none;
-    border: 1px solid #00000011;
-    cursor: pointer;
-    padding: 10px 10px;
-    &:hover {
-      background-color: #0000ff11;
-    }
-  }
-}
-
 /*............................. CALENDAR  .........................*/
 .app {
   width: 900px;
-}
-
-.create-new-trip-title,
-.data-travel-container {
-  background-color: #2f7055;
-  width: 1000px;
-  border-radius: 12px;
-  color: white;
 }
 
 input.datapicker-input[type="text"] {
@@ -181,26 +149,6 @@ input.datapicker-input[type="text"] {
   background-color: #75d8a2;
   text-align: center;
 }
-
-/*................................ CREATE NEW TRIP ..............................*/
-.all-sugg-cont,
-.to-do-list-container,
-.upload-image-container {
-  border: 2px solid #222222;
-  border-radius: 8px;
-  overflow: auto;
-  width: 600px;
-  height: 400px;
-  max-width: 600px;
-}
-
-.block-one {
-  margin-left: 5px;
-  margin-right: 5px;
-  font-family: Comfortaa-Light;
-  float:left;
-}
-
 //change style of bootsrap button in page
 .button-to-do-list.btn.btn-primary[type="button"],
 .button-activities.btn.btn-primary[type="button"],
@@ -225,23 +173,10 @@ input.datapicker-input[type="text"] {
   width: 100%;
 }
 
-.create-new-trip-text {
-  margin-left: 6px;
-  margin-right: 6px;
-}
-
-.create-new-trip-title {
-  width: 600px;
-  padding-bottom: 1px;
-  padding-top: 10px;
-  width: 600px;
-}
-
 .dropdown-item[role="button"] {
   color: purple;
 }
 
-.header-new-trip,
 .calendar-date-container {
   display: flex;
   flex-direction: row;
@@ -249,64 +184,12 @@ input.datapicker-input[type="text"] {
   text-align: left;
 }
 
-.row-create-trip {
-  margin-top: 10px;
-}
-
-.pretty.p-default.p-curve {
-  //className-->Checkbox
-  margin-bottom: 30px;
-}
-
-.select-sugg,
-.text-need-sugg,
-.to-do-list {
-  font-size: 20px;
-}
-
-.select-sugg {
-  margin-bottom: 20px;
-}
-
-.sugg-container {
-  margin-left: 5px;
-}
-
-.suggestions {
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.to-do-list {
-  margin-left: 5px;
-  margin-top: 10px;
-}
-
 ul {
   margin-right: 8px;
 }
 
-/*............................. FOOTER STYLE  .........................*/
-.foot {
-  background-color: #2F7055;
-  color: #E4E4E4;
-  height: 38px;
-  font-family: Comfortaa-Light;
-  font-size: small;
-  text-align: center;
-  padding: 12px 0;
-}
 
 /*............................. HEADER STYLE  .........................*/
-.button-to-trip {
-  transition-duration: 0.4s;
-  &:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-
-    transition: 0.5s ease;
-  }
-}
 
 .button-text {
   color: white;
@@ -328,17 +211,7 @@ ul {
   }
 }
 
-//className-->ButtonGroup (My Past Trip - My Planned Trips - My Photo)
-.btn.btn-secondary {
-  color: white;
-  background-color: #455753;
-  padding: 0.55em 1em;
-  border: 1px solid white;
-}
-
-.button-my-photo.btn.btn-secondary{
-  padding: 0.55em 1.9em;
-}
+//className-->ButtonGroup
 
 .description-profile {
   width: 600px;
@@ -362,23 +235,6 @@ ul {
   margin-bottom: 0;
 }
 
-.myStory {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  line-height: 25px; /* fallback */
-  max-height: 500px; /* fallback */
-  -webkit-line-clamp: 10; /* number of lines to show */
-  -webkit-box-orient: vertical;
-  text-align: justify;
-}
-
-.profile-name {
-  background-color: #75d8a2;
-  border-radius: 6px;
-  color: white;
-  padding: 0.1em 1em;
-}
 
 /*............................. LOGIN PAGE  .........................*/
 .default-button {
@@ -418,15 +274,7 @@ ul {
   font-size: 20px;
 }
 
-/*............................. MY PHOTO STYLE  .........................*/
-img.my-photo-of-trip {
-  width: 230px;
-  height: 230px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: 0.3s;
-  &:hover {opacity: 0.7;};
-}
+
 
 /*............................. NAVBAR STYLE  .........................*/
 .button-navbar {
@@ -447,131 +295,6 @@ img.my-photo-of-trip {
 
 .navbar.navbar-expand.navbar-light.bg-primary.sticky-top {
   padding: 0 5px;
-}
-
-
-/*................................ SEARCH LOCATION ..............................*/
-.background-location {
-  background-image: url("/Landscape.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 70px;
-  border: none;
-  width: 90%;
-  min-height: 600px;
-}
-
-.button-travel {
-  padding: 3px 15px;
-  margin-left: 3px;
-}
-
-.choose-destination-text,
-.add-sugg-text {
-  font-size: 20px;
-  text-align: left;
-}
-
-.add-sugg-text-nofloat {
-  font-size: 20px;
-}
-
-.location-logo {
-  padding-top: 2.5%;
-  padding-bottom: 60px;
-}
-
-.location-style {
-  height: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.on-submit-style {
-  color: #222222;
-  font-family: Comfortaa-SemiBold;
-}
-
-.src-location-title {
-  font-size: 50px;
-  color: #222222;
-  font-family: Comfortaa-SemiBold;
-  top: 80px;
-  position: relative;
-}
-
-/*................................ TRAVEL BOOK ..............................*/
-.button-container {
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-
-.card-img-top {
-  //className-->img polaroid
-  margin-top: 20px;
-}
-
-.image-container {
-  &:hover .new-trip-image {
-    opacity: 0.3;
-    transition: 0.5s ease;
-  }
-  &:hover .middle {
-    opacity: 1;
-  }
-}
-
-.middle {
-  text-align: center;
-  transition: 0.5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-.new-trip-button {
-  padding: 15px 25px;
-  font-size: 15px;
-  border-radius: 50%;
-  color: white;
-  background-color: #455753;
-  box-shadow: 0 9px #999;
-  &:hover {
-    background-color: #455753;
-  }
-  &:active {
-    background-color: #455753;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-    outline: none;
-  }
-}
-
-a.travel-photo-text {
-  color: #222222;
-  text-decoration: none;
-  &:hover {
-    color: #222222;
-    text-decoration: none;
-  }
-}
-
-/*................................ TRIP ID ..............................*/
-.add-sugg-text {
-  margin-left: 5px;
-}
-
-input.suggestion-input[type="text"] {
-  background-image: url("/lente.png");
-  background-size: 23px;
-  background-position: 4px 2px;
-  margin-left: 5px;
 }
 
 
@@ -670,9 +393,7 @@ input[type="file"] {
 
 .card {
   margin: 3rem;
-
   min-height: 550px;
-
   display: flex;
   flex-direction: column;
   position: relative;

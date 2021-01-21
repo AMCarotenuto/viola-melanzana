@@ -40,9 +40,9 @@ export default function recipes() {
       <div>{loginCheck()}</div>
       <TopNavbar />
       <h1>These are your favourite recipes!</h1>
-      {favourites.map((r) => (
-        <Favourites key={uuidv4()} recipe={r} />
-      ))}
+        {favourites.map((r) => (
+          <Favourites key={uuidv4()} recipe={r} />
+        ))}
       <Footer />
     </>
   );

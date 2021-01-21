@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Ingredients from "./Ingredients";
-import { CardDeck, Card, Button } from "react-bootstrap";
+import { CardDeck, Card, Button, Container } from "react-bootstrap";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -47,12 +47,12 @@ const Favourites = ({ recipe }) => {
           <Card.Body>
             <Card.Img variant="top" src={image} alt={label} />
             <br />
-
             <Button variant="primary" onClick={() => setShow(!show)}>
               Ingredients
             </Button>
+            <Container>
             {show && ingredientName}
-            <br></br>
+           </Container>
             <FacebookShareButton
               url={url}
               quote={label}
@@ -65,6 +65,7 @@ const Favourites = ({ recipe }) => {
               selected={startDate}
               onChange={(date) => calendarDate(date)}
             />
+            <br/>
             <Button onClick={() => removeFavourite()}>
               Remove from favourites
             </Button>
