@@ -47,7 +47,7 @@ Open http://localhost:3000 with your browser to see the result.
   }
 
 
-<strong>Backend</strong>
+<strong>Backend:</strong>
 
 To start the backend server:
 
@@ -61,7 +61,7 @@ node express.js
 
 app will be listening on http://localhost:3001
 
-backend dependencies:
+<strong>Backend dependencies:</strong>
 {
     "airtable",
     "body-parser",
