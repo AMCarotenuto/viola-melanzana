@@ -13,15 +13,11 @@ const Favourites = ({ recipe }) => {
   const [startDate, setStartDate] = useState(new Date());
 
   function calendarDate(date) {
-    const res = axios
-      .put("http://localhost:3001/recipes", {
-        id: recipe.id,
-        fields: { date },
-      })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+    const res = axios.put("http://localhost:3001/recipes", {
+      id: recipe.id,
+      fields: { date },
+    });
+    setStartDate(date);
   }
 
   async function removeFavourite() {
@@ -71,7 +67,9 @@ const Favourites = ({ recipe }) => {
             </Button>
           </Card.Body>
           <Card.Footer className="text-muted">
-            <a href={url} target="_blank">Recipe from {source}</a>
+            <a href={url} target="_blank">
+              Recipe from {source}
+            </a>
           </Card.Footer>
         </Card>
       </CardDeck>
